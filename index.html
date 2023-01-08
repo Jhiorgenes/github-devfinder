@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>github-dev-finder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css"
+      integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h2>Github Devfinder</h2>
+      <img
+        id="change-theme"
+        src="assets/images/sun.svg"
+        alt="ícone da lua, tema escuro"
+      />
+    </header>
+
+    <div class="search-content">
+      <img src="assets/images/search.svg" alt="" />
+      <input
+        id="input"
+        type="text"
+        placeholder="Pesquisar usuário no Github"
+        value="Jhiorgenes"
+      />
+      <button id="button">Pesquisar</button>
+    </div>
+
+    <main class="main">
+      <div class="main-header">
+        <img
+          id="user-photo"
+          src="assets/images/foto.png"
+          alt="foto do usuario"
+        />
+        <div class="user-info">
+          <div class="leftside">
+            <h1 id="user-name">Victor Figueiredo</h1>
+            <span id="user-login">User</span>
+          </div>
+          <div id="join-date" class="rightside">Entrou em 24 dez 2018</div>
+        </div>
+      </div>
+      <div id="user-bio" class="user-bio">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit
+        lorem quis hendrerit finibus. Curabitur venenatis.
+      </div>
+
+      <div class="badge-user">
+        <div class="badge">
+          <h3>Repos</h3>
+          <p id="repos">8</p>
+        </div>
+        <div class="badge">
+          <h3>Seguidores</h3>
+          <p id="followers">779</p>
+        </div>
+        <div class="badge">
+          <h3>Seguindo</h3>
+          <p id="following">56</p>
+        </div>
+      </div>
+
+      <section class="social">
+        <div class="social-item">
+          <img id="location-icon" src="assets/images/location.svg" alt="" />
+          <span id="user-location">São Paulo</span>
+        </div>
+        <div class="social-item">
+          <img id="link-icon" src="assets/images/link.svg" alt="" />
+          <span id="user-url">https://github.com/</span>
+        </div>
+        <div class="social-item">
+          <img id="twitter-icon" src="assets/images/twitter.svg" alt="" />
+          <span id="user-twitter">DouglasDans</span>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"
+      integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

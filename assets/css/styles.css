@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+
+:root {
+  --dark: #131d2e;
+  --dark-light: #1f2a48;
+  --gray: #f3f6fd;
+  --white: #fefefe;
+  --blue: #0178fd;
+  --blue-light: #8190ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Code', sans-serif;
+}
+
+body {
+  background-color: var(--dark);
+  height: 100vh;
+  padding: 0 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all ease 0.5s;
+}
+
+header {
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700px;
+  color: var(--gray);
+}
+
+header img {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.search-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-light);
+  padding: 0 13px;
+  margin-top: 21px;
+  border-radius: 10px;
+}
+
+.search-content input {
+  width: 100%;
+  padding: 16px 13px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-overflow: ellipsis;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700px;
+}
+
+.search-content input::placeholder {
+  color: var(--blue-light);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700px;
+}
+
+.search-content button {
+  padding: 10px 15px;
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: var(--blue);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.search-content button:hover {
+  filter: brightness(80%);
+}
+
+.main {
+  padding: 10px 15px;
+  background-color: var(--dark-light);
+  border-radius: 10px;
+  margin-top: 20px;
+  min-height: 476px;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.main-header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .main-header .user-info {
+  display: flex;
+  width: 100%;
+  align-items: start;
+} */
+
+.main-header .user-info .leftside {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.main-header .user-info .leftside h1 {
+  line-height: 23px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+}
+.main-header .user-info .leftside span {
+  color: var(--blue);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.main-header .user-info .rightside {
+  color: var(--blue-light);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 10px;
+}
+
+.main .user-bio {
+  color: var(--blue-light);
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: justify;
+  max-width: 250px;
+}
+
+.main .badge-user {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--dark);
+  padding: 19px 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.main .badge-user .badge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main .badge-user .badge h3 {
+  color: var(--blue-light);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.main .badge-user .badge p {
+  color: var(--white);
+  font-weight: 700;
+  line-height: 23px;
+  font-size: 18px;
+}
+
+.main .social {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  margin-top: 23px;
+}
+.main .social-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.main .social-item span {
+  color: #fefefe;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 5%;
+}
+
+/* ligth-theme-settings */
+
+body.light {
+  background-color: var(--gray);
+}
+
+body.light header h2 {
+  color: var(--dark);
+}
+
+body.light .search-content,
+body.light .main {
+  background-color: var(--white);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+body.light .search-content input {
+  color: var(--blue-light);
+}
+
+body.light .main-header .user-info h1 {
+  color: var(--dark);
+}
+body.light .main .badge-user {
+  background-color: var(--gray);
+}
+body.light .main .badge-user .badge p {
+  color: var(--dark);
+}
+body.light .main .social .social-item span {
+  color: var(--dark-light);
+}
+
+/* end-of-light-theme */
