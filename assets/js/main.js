@@ -28,6 +28,7 @@ async function handleSubmit() {
         showErrorRequisitionAlert()
       }
       const json = await response.json()
+      console.log(json)
       updateHtml(json)
       input.value = ''
     } else {
@@ -35,6 +36,7 @@ async function handleSubmit() {
     }
   } catch (err) {
     console.log(err)
+  } finally {
   }
 }
 
@@ -42,14 +44,14 @@ function updateHtml(json) {
   userPhoto.src = json.avatar_url
   userName.innerHTML = json.name
   userLogin.innerHTML = json.login
-  joinDate.innerHTML = json.created_at
-  userBio.innerHTML = json.bio ?? 'Usuário sem bio'
+  joinDate.innerHTML = new Date(json.created_at).toLocaleDateString()
+  userBio.innerHTML = json.bio ?? 'This profile has no bio'
   repos.innerHTML = json.public_repos
   followers.innerHTML = json.followers
   following.innerHTML = json.following
-  userLocation.innerHTML = json.location ?? 'Não definido'
-  userUrl.innerHTML = json.html_url
-  userTwitter.innerHTML = json.twitter_username ?? 'Não definido.'
+  userLocation.innerHTML = json.location ?? 'Undefined'
+  userUrl.innerHTML = `<a href="${json.html_url}" target="_blank">${json.login}</a>`
+  userTwitter.innerHTML = json.twitter_username ?? 'Undefined Twitter'
 }
 
 function showErrorRequisitionAlert() {
@@ -123,12 +125,9 @@ function handleChangeTheme() {
 
 handleSubmit()
 button.addEventListener('click', handleSubmit)
+input.addEventListener('keyup', e => {
+  if (e.key === 'Enter') {
+    handleSubmit()
+  }
+})
 changeThemeIcon.addEventListener('click', handleChangeTheme)
-
-// TODO: terminar responsividade
-// TODO: formatar data
-// TODO: ajustar tamanho dos icones no social
-// TODO: colocar o link para o github do perfil
-// TODO: verificar se todos os dados retornam certo, se retornar undefined, definir valor padrão
-// TODO: funçao para enviar com o enter do teclado
-// TODO: verificar se tem mais alguma informação da api para colocar no app

@@ -18,9 +18,8 @@
 
 body {
   background-color: var(--dark);
-  height: 100vh;
   padding: 0 20px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
   transition: all ease 0.5s;
 }
@@ -101,12 +100,17 @@ header img {
   min-height: 476px;
 }
 
+.main .rightside {
+  margin-top: 20px;
+  flex: 1;
+}
+
 .main-header {
   display: flex;
   align-items: center;
   gap: 15px;
 }
-.main-header img {
+.main .leftside img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -114,12 +118,6 @@ header img {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-/* .main-header .user-info {
-  display: flex;
-  width: 100%;
-  align-items: start;
-} */
 
 .main-header .user-info .leftside {
   width: 100%;
@@ -159,8 +157,14 @@ header img {
   max-width: 250px;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+}
+
 .main .badge-user {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   background-color: var(--dark);
   padding: 19px 18px;
@@ -200,11 +204,29 @@ header img {
   align-items: center;
 }
 
+.main .social-item img {
+  width: 15px;
+  height: 20px;
+}
+
 .main .social-item span {
   color: #fefefe;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 5%;
+}
+
+.main .social-item span a {
+  text-decoration: none;
+  color: #fefefe;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 5%;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.main .social-item span a:hover {
+  color: var(--blue);
 }
 
 /* ligth-theme-settings */
@@ -236,8 +258,61 @@ body.light .main .badge-user {
 body.light .main .badge-user .badge p {
   color: var(--dark);
 }
-body.light .main .social .social-item span {
+body.light .main .social .social-item span,
+body.light .main .social-item span a {
   color: var(--dark-light);
 }
 
 /* end-of-light-theme */
+
+@media (max-width: 320px) {
+  .badge-user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+  .social-item {
+    word-wrap: break-word;
+  }
+}
+
+@media (min-width: 570px) {
+  .main {
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .main .leftside img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .main .social {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-header .user-info {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .main-header .user-info #join-date {
+    margin-top: 0;
+  }
+
+  .main #user-bio {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    min-width: 80%;
+  }
+}
