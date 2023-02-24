@@ -36,7 +36,6 @@ async function handleSubmit() {
     }
   } catch (err) {
     console.log(err)
-  } finally {
   }
 }
 
@@ -56,10 +55,10 @@ function updateHtml(json) {
 
 function showErrorRequisitionAlert() {
   iziToast.warning({
-    title: 'Opa!',
+    title: 'Oops!',
     titleColor: 'black',
     titleSize: '18',
-    message: 'Nenhum usuário com esse nome encontrado!',
+    message: 'User not found!',
     messageSize: '14',
     messageColor: 'white',
     backgroundColor: 'red',
@@ -83,10 +82,10 @@ function showErrorRequisitionAlert() {
 
 function showErrorInputEmptyAlert() {
   iziToast.warning({
-    title: 'Opa!',
+    title: 'Oops',
     titleColor: 'black',
     titleSize: '18',
-    message: 'Digite um nome de usuário ai meu patrão!',
+    message: 'Insert a name in the search input!',
     messageSize: '14',
     messageColor: 'white',
     theme: 'light',

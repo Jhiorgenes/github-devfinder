@@ -19,7 +19,7 @@
 body {
   background-color: var(--dark);
   padding: 0 20px;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   transition: all ease 0.5s;
 }
@@ -32,15 +32,14 @@ header {
 }
 
 header h2 {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 1.5rem;
   font-weight: 700px;
   color: var(--gray);
 }
 
 header img {
-  width: 18px;
-  height: 18px;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
 }
 
@@ -49,38 +48,36 @@ header img {
   justify-content: space-between;
   align-items: center;
   background-color: var(--dark-light);
-  padding: 0 13px;
-  margin-top: 21px;
-  border-radius: 10px;
+  padding: 0 1rem;
+  margin-top: 1.25rem;
+  border-radius: 6px;
 }
 
 .search-content input {
   width: 100%;
-  padding: 16px 13px;
+  padding: 1rem;
   background-color: transparent;
   outline: none;
   border: none;
   text-overflow: ellipsis;
   color: var(--white);
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 700px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .search-content input::placeholder {
   color: var(--blue-light);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 18px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .search-content button {
-  padding: 10px 15px;
+  padding: 0.6rem;
   color: var(--gray);
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 1rem;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: var(--blue);
   border: none;
   outline: none;
@@ -89,15 +86,14 @@ header img {
 }
 
 .search-content button:hover {
-  filter: brightness(80%);
+  filter: brightness(70%);
 }
 
 .main {
   padding: 40px 15px;
   background-color: var(--dark-light);
-  border-radius: 10px;
+  border-radius: 8px;
   margin-top: 20px;
-  min-height: 476px;
 }
 
 .main .rightside {
@@ -110,6 +106,7 @@ header img {
   align-items: center;
   gap: 15px;
 }
+
 .main .leftside img {
   width: 80px;
   height: 80px;
@@ -198,6 +195,7 @@ header img {
   gap: 29px;
   margin-top: 23px;
 }
+
 .main .social-item {
   display: flex;
   gap: 14px;
