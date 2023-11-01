@@ -14,8 +14,8 @@ const userLocation = document.getElementById('user-location')
 
 // icones para efetuar a mudança de cor de acordo com o tema
 const linkIcon = document.getElementById('link-icon')
-const locationIcon = document.getElementById('location-icon')
 const twitterIcon = document.getElementById('twitter-icon')
+const locationIcon = document.getElementById('location-icon')
 const changeThemeIcon = document.getElementById('change-theme')
 
 async function handleSubmit() {
@@ -27,9 +27,8 @@ async function handleSubmit() {
       if (response.status === 404) {
         showErrorRequisitionAlert()
       }
-      const json = await response.json()
-      console.log(json)
-      updateHtml(json)
+      const data = await response.json()
+      updateHtml(data)
       input.value = ''
     } else {
       showErrorInputEmptyAlert()
@@ -40,17 +39,18 @@ async function handleSubmit() {
 }
 
 function updateHtml(json) {
-  userPhoto.src = json.avatar_url
   userName.innerHTML = json.name
+  userPhoto.src = json.avatar_url
   userLogin.innerHTML = json.login
-  joinDate.innerHTML = new Date(json.created_at).toLocaleDateString()
-  userBio.innerHTML = json.bio ?? 'This profile has no bio'
   repos.innerHTML = json.public_repos
   followers.innerHTML = json.followers
   following.innerHTML = json.following
+  userBio.innerHTML = json.bio ?? 'This profile has no bio'
   userLocation.innerHTML = json.location ?? 'Undefined'
+  joinDate.innerHTML = new Date(json.created_at).toLocaleDateString()
   userUrl.innerHTML = `<a href="${json.html_url}" target="_blank">${json.login}</a>`
-  userTwitter.innerHTML = json.twitter_username ?? 'Undefined Twitter'
+  userTwitter.innerHTML =
+    json.twitter_username ?? "this user doesn't have twitter"
 }
 
 function showErrorRequisitionAlert() {
