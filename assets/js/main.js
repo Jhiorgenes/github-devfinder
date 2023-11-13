@@ -110,11 +110,14 @@ function handleChangeTheme() {
   const body = document.querySelector('body')
   body.classList.toggle('light')
   if (body.classList.contains('light')) {
+    localStorage.setItem('theme', 'light')
     linkIcon.src = './assets/images/link-dark.svg'
     changeThemeIcon.src = './assets/images/moon.svg'
     twitterIcon.src = './assets/images/twitter-dark.svg'
     locationIcon.src = './assets/images/location-dark.svg'
   } else {
+    body.classList.toggle('dark')
+    localStorage.setItem('theme', 'dark')
     linkIcon.src = './assets/images/link-light.svg'
     changeThemeIcon.src = './assets/images/sun.svg'
     locationIcon.src = './assets/images/location-light.svg'
@@ -130,3 +133,21 @@ input.addEventListener('keyup', e => {
   }
 })
 changeThemeIcon.addEventListener('click', handleChangeTheme)
+
+window.addEventListener('load', function (event) {
+  const body = this.document.querySelector('body')
+
+  const storedTheme = this.localStorage.getItem('theme')
+  if (storedTheme === 'light') {
+    body.classList.add(storedTheme)
+    linkIcon.src = './assets/images/link-dark.svg'
+    changeThemeIcon.src = './assets/images/moon.svg'
+    twitterIcon.src = './assets/images/twitter-dark.svg'
+    locationIcon.src = './assets/images/location-dark.svg'
+  } else {
+    linkIcon.src = './assets/images/link-light.svg'
+    changeThemeIcon.src = './assets/images/sun.svg'
+    locationIcon.src = './assets/images/location-light.svg'
+    twitterIcon.src = './assets/images/twitter-light.svg'
+  }
+})
