@@ -49,8 +49,9 @@ function updateHtml(json) {
   userLocation.innerHTML = json.location ?? 'Undefined'
   joinDate.innerHTML = new Date(json.created_at).toLocaleDateString()
   userUrl.innerHTML = `<a href="${json.html_url}" target="_blank">${json.login}</a>`
-  userTwitter.innerHTML =
-    json.twitter_username ?? "this user doesn't have twitter"
+  userTwitter.innerHTML = json.twitter_username
+    ? `@<a href=https://x.com/${json.twitter_username} target="_blank">${json.twitter_username}</a>`
+    : 'this user doenst have an twitter account'
 }
 
 function showErrorRequisitionAlert() {
